@@ -1,18 +1,8 @@
-function getSecondLargest(nums) {
-    // Complete the function
-    let max = nums[0], max2 = nums[0];
-    for (let num of nums) {
-        if (num > max) {
-            max = num;
-        }
-    }
-    for (let num of nums) {
-        if (num > max2 && num < max) {
-            max2 = num;
-        }
-    }
-    return max2;
+let s = Number(1234);
+try {
+    let r = s.split("").reverse().join("");
+    console.log(r);
+} catch (e) {
+    console.log(e.message);
+    console.log(s);
 }
-
-let nums = [1, 2, 3, 4, 5];
-console.log(getSecondLargest(nums));
