@@ -1,19 +1,15 @@
-function Polygon(sides) {
-    this.sides = sides;
+function sides(literals, ...expressions) {
+    let a = expressions[0];
+    let p = expressions[1];
+    let s1 = (p + Math.sqrt(p * p - 16 * a)) / 4;
+    let s2 = (p - Math.sqrt(p * p - 16 * a)) / 4;
+    return [s1, s2].sort();
 }
 
-Polygon.prototype.perimeter = function () {
-    let prmt = 0;
-    for (let side of this.sides) {
-        prmt += side;
-    }
-    return prmt;
-};
+const s1 = 10;
+const s2 = 14;
 
-const rectangle = new Polygon([10, 20, 10, 20]);
-const square = new Polygon([10, 10, 10, 10]);
-const pentagon = new Polygon([10, 20, 30, 40, 43]);
+const [x, y] = sides`The area is: ${s1 * s2}.\nThe perimeter is: ${2 * (s1 + s2)}.`;
 
-console.log(rectangle.perimeter());
-console.log(square.perimeter());
-console.log(pentagon.perimeter());
+console.log((s1 === x) ? s1 : -1);
+console.log((s2 === y) ? s2 : -1);
