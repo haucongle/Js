@@ -1,13 +1,19 @@
-function Rectangle(a, b) {
-    this.length = a;
-    this.width = b;
-    this.perimeter = 2 * (a + b);
-    this.area = a * b;
+function Polygon(sides) {
+    this.sides = sides;
 }
 
-const rec = new Rectangle(4, 5);
+Polygon.prototype.perimeter = function() {
+    let prmt = 0;
+    for (let side of this.sides) {
+        prmt += side;
+    }
+    return prmt;
+}
 
-console.log(rec.length);
-console.log(rec.width);
-console.log(rec.perimeter);
-console.log(rec.area);
+const rectangle = new Polygon([10, 20, 10, 20]);
+const square = new Polygon([10, 10, 10, 10]);
+const pentagon = new Polygon([10, 20, 30, 40, 43]);
+
+console.log(rectangle.perimeter());
+console.log(square.perimeter());
+console.log(pentagon.perimeter());
