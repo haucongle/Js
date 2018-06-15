@@ -1,17 +1,13 @@
-function isPositive(a) {
-    if (a > 0) {
-        return 'YES';
-    } else if (a < 0) {
-        throw new Error('Negative Error');
-    } else {
-        throw new Error('Zero Error');
-    }
+function Rectangle(a, b) {
+    this.length = a;
+    this.width = b;
+    this.perimeter = 2 * (a + b);
+    this.area = a * b;
 }
 
-try {
-    // console.log(isPositive(-1));
-    // console.log(isPositive(0));
-    console.log(isPositive(1));
-} catch (e) {
-    console.log(e.message);
-}
+const rec = new Rectangle(4, 5);
+
+console.log(rec.length);
+console.log(rec.width);
+console.log(rec.perimeter);
+console.log(rec.area);
