@@ -1,14 +1,14 @@
-function getMaxLessThanK(n, k) {
-    let max = -1;
-    for (let i = 1; i <= n; i++) {
-        for (let j = i + 1; j <= n; j++) {
-           let tmp = i & j;
-           if (tmp > max && tmp < k) {
-               max = tmp;
-           }
-        }
-    }
-    return max;
+function getDayName(date) {
+    let weekday = new Array(7);
+    weekday[0] = "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";
+    let d = new Date(date);
+    return weekday[d.getDay()];
 }
 
-console.log(getMaxLessThanK(2, 2));
+console.log(getDayName("11/10/2010"));
