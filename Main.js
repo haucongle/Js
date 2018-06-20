@@ -1,6 +1,6 @@
 function regexVar() {
-    return /^([aeiou]).*\1$/;
+    return /^(Mr|Mrs|Ms|Dr|Er)\.\w+$/;
 }
 
 const re = regexVar();
-console.log(re.test('bcd'));
+console.log(!!'Er.Dr.'.match(re));
